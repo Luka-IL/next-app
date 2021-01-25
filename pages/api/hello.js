@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default (req, res) => {
+export default async (req, res) => {
+  const hello = `Hello from SSR`
+  console.log(hello)
   res.statusCode = 200
-  res.json({ name: 'John Doe' })
+  await res.json({hello})
 }
